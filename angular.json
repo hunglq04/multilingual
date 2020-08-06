@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "multilingual"
+    }
+  },
+  "defaultProject": "multilingual",
+  "cli": {
+    "analytics": false
+  }
 }
