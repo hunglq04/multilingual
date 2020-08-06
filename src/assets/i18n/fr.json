@@ -1,0 +1,45 @@
+{
+    "common": {
+        "status": "FR_Status",
+        "startDate":"FR_Start date",
+        "endDate":"FR_End date",
+        "number": "FR_Number",
+        "name": "FR_Name",
+        "customer": "FR_Customer"
+    },
+
+    "header": {
+        "title": "FR_Project Information Management",
+        "help": "FR_Help",
+        "logout": "FR_Log out"
+    },
+    
+    "nav": {
+        "title": "FR_Project list",
+        "new": "FR_New",
+        "project": "FR_Project",
+        "customer": "FR_Customer",
+        "supplier": "FR_Supplier"
+    },
+
+    "projectDetail": {
+        "title": {
+            "new": "FR_New Project",
+            "edit": "FR_Edit Project"
+        },
+        "number": "FR_Project Number",
+        "name": "FR_Project name",
+        "customer": "FR_Customer",
+        "group": "FR_Group",
+        "cancel": "FR_Cancel",
+        "create": "FR_Create Project"
+    },
+
+    "projectList": {
+        "title": "FR_Project List",
+        "searchPH": "FR_Project number, name, customer name",
+        "filterPH": "FR_Project status",
+        "search": "FR_Search Project",
+        "reset": "FR_Reset Search"
+    }
+}

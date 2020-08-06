@@ -1,0 +1,45 @@
+{
+    "common": {
+        "status": "Status",
+        "startDate":"Start date",
+        "endDate":"End date",
+        "number": "Number",
+        "name": "Name",
+        "customer": "Customer"
+    },
+
+    "header": {
+        "title": "Project Information Management",
+        "help": "Help",
+        "logout": "Log out"
+    },
+    
+    "nav": {
+        "title": "Project list",
+        "new": "New",
+        "project": "Project",
+        "customer": "Customer",
+        "supplier": "Supplier"
+    },
+
+    "projectDetail": {
+        "title": {
+            "new": "New Project",
+            "edit": "Edit Project"
+        },
+        "number": "Project Number",
+        "name": "Project name",
+        "customer": "Customer",
+        "group": "Group",
+        "cancel": "Cancel",
+        "create": "Create Project"
+    },
+
+    "projectList": {
+        "title": "Project List",
+        "searchPH": "Project number, name, customer name",
+        "filterPH": "Project status",
+        "search": "Search Project",
+        "reset": "Reset Search"
+    }
+}
