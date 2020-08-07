@@ -1,1 +1,45 @@
-<p>project-list works!</p>
+<form class="from-group row m-0 pt-4 border-top">
+  <input type="text" class="form-control col-4 border-top" placeholder="{{'projectList.searchPH' | translate}}" />
+  <select class="form-control col-2 mx-4" aria-placeholder="holder">
+    <option>{{"projectList.filterPH" | translate}}</option>
+    <option>New</option>
+    <option>Planned</option>
+    <option>Inprogress</option>
+    <option>Finished</option>
+  </select>
+  <button class="btn btn-main mx-4">{{"projectList.search" | translate}}</button>
+  <a href="#" class="btn btn-transparent col-2">{{"projectList.reset" | translate}}</a>
+</form>
+<table class="table table-bordered mt-5">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">{{"common.number" | translate}}</th>
+      <th scope="col">{{"common.name" | translate}}</th>
+      <th scope="col">{{"common.status" | translate}}</th>
+      <th scope="col">{{"common.customer" | translate}}</th>
+      <th scope="col">{{"common.startDate" | translate}}</th>
+      <th scope="col">{{"common.delete" | translate}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center"><input type="checkbox" class=""></td>
+      <td class="text-right">3116</td>
+      <td>Facturation / Encaissenments</td>
+      <td>New</td>
+      <td>Les Retaites Populaires</td>
+      <td class="text-center">25.02.2004</td>
+      <td class="text-center"><a href="#"><i class="fas fa-trash-alt text-danger"></i></a></td>
+    </tr>
+    <tr>
+        <td class="text-center"><input type="checkbox" class=""></td>
+        <td class="text-right">Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>Mark</td>
+        <td class="text-center">11.11.11
+        </td>
+        <td class="text-center"><a href="#"><i class="fas fa-trash-alt text-danger"></i></a></td>
+      </tr>
+</table>

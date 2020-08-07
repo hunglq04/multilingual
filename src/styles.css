@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  font-family: "Segoe UI";
+  color: #666666;
+}
+
+body {
+  overflow: hidden;
+  background: #f9f9f9;
+}
+
+.text-highlight {
+  color: #2f85fa;
+}
+
+.text-normal {
+  color: #666666;
+}
+
+.text-black {
+  color: #333333;
+  font-weight: 600;
+}
+
+.text-disable {
+  color: #d3d3d3;
+}
+
+/* .h-10 {
+    height: 10vh;
+} */
+
+.h-90 {
+  height: 100vh;
+}
+
+.text-18 {
+  font-size: 18pt;
+  font-weight: 600;
+}
+
+.text-14 {
+  font-size: 14pt;
+}
+
+.form-control {
+  margin: 0;
+  height: 30px !important;
+  font-size: 10pt;
+}
+
+.form-group {
+  margin-bottom: 38px;
+}
+
+.form-group:first-child {
+  margin-top: 38px;
+}
+
+.form-group label {
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.required:after {
+  content: " *";
+  color: red;
+}
+
+.btn {
+    width: 200px;
+    height: 35px;
+}
+
+.btn-main {
+    background-color: #2f85fa;
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-second {
+    background-color: #b9b9b9;
+    color: #333333;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    color: #2f85fa;
+    font-weight: 600;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;;
+}
+
+.table-bordered {
+    background-color: #ffffff;
+    font-size: 14pt;
+    color: #666666;
+    font-weight: 600;
+}
+
+.table-bordered td {
+    border-top: none;
+    border-bottom: none;
+}
+
+.table-bordered th {
+    padding: 0px 12px;
+    font-weight: 600;
+    font-size: 14t;
+    height: 35px;
+}

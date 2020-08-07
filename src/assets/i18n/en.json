@@ -5,7 +5,8 @@
         "endDate":"End date",
         "number": "Number",
         "name": "Name",
-        "customer": "Customer"
+        "customer": "Customer",
+        "delete": "Delete"
     },
 
     "header": {
@@ -31,6 +32,8 @@
         "name": "Project name",
         "customer": "Customer",
         "group": "Group",
+        "member": "Member",
+        "status": "Status",
         "cancel": "Cancel",
         "create": "Create Project"
     },

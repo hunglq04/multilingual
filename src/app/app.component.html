@@ -1,11 +1,17 @@
-<div class="border-bottom"><app-header></app-header></div>
+<div class="border-bottom h-10"><app-header></app-header></div>
 <div class="container">
   <div class="row">
-    <div class="col-2 border-right">
+    <div class="col-2 border-right h-90">
       <app-nav-bar></app-nav-bar>
     </div>
     <div class="col-10">
-      <app-project-list></app-project-list>
-    </div>  
+      <div class="container">
+        <label class="mt-4 text-18">{{
+          "projectDetail.title.new" | translate
+        }}</label>
+        <app-project-list></app-project-list>
+        <!-- <app-project-detail></app-project-detail> -->
+      </div>
+    </div>
   </div>
 </div>

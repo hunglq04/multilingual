@@ -31,6 +31,8 @@
         "name": "FR_Project name",
         "customer": "FR_Customer",
         "group": "FR_Group",
+        "member": "FR_Member",
+        "status": "FR_Status",
         "cancel": "FR_Cancel",
         "create": "FR_Create Project"
     },
