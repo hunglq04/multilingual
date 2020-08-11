@@ -7,11 +7,11 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppService } from './app.service';
+import { ProjectService } from './project/project.service';
 import { HeaderComponent } from './header/header.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ProjectListComponent } from './project-list/project-list.component';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { ProjectListComponent } from './project/project-list/project-list.component';
+import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -39,7 +39,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [AppService],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

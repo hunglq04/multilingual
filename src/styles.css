@@ -64,6 +64,7 @@ body {
 
 a {
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 .required:after {

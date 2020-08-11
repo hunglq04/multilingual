@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core'
-import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ export class AppComponent implements OnInit{
 
   products: [];
 
-  constructor(public translate: TranslateService, private appService: AppService) {
+  constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'fr']);
     translate.setDefaultLang('en');
     const browserLang = translate.getBrowserLang();

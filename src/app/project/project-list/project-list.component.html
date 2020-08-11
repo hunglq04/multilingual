@@ -1,0 +1,57 @@
+<label class="mt-4 text-18">{{ "projectList.title" | translate }}</label>
+<form class="from-group row m-0 pt-4 border-top" [formGroup]="formSearch">
+  <input
+    type="text"
+    class="form-control col-4 border-top"
+    placeholder="{{ 'projectList.searchPH' | translate }}"
+    formControlName="keywordSearch"
+  />
+  <select
+    class="form-control col-2 mx-4"
+    aria-placeholder="holder"
+    formControlName="status"
+  >
+    <option value="">{{ "projectList.filterPH" | translate }}</option>
+    <option value="NEW">New</option>
+    <option value="PLA">Planned</option>
+    <option value="INP">In Progress</option>
+    <option value="FIN">Finished</option>
+  </select>
+  <button class="btn btn-main mx-4" (click)="search()">
+    {{ "projectList.search" | translate }}
+  </button>
+  <a class="btn btn-transparent col-2" (click)="reset()">{{
+    "projectList.reset" | translate
+  }}</a>
+</form>
+<table class="table table-bordered mt-5 mb-0">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">{{ "common.number" | translate }}</th>
+      <th scope="col">{{ "common.name" | translate }}</th>
+      <th scope="col">{{ "common.status" | translate }}</th>
+      <th scope="col">{{ "common.customer" | translate }}</th>
+      <th scope="col">{{ "common.startDate" | translate }}</th>
+      <th scope="col">{{ "common.delete" | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projectList">
+      <td class="text-center"><input type="checkbox" [disabled]="!canDelete(project.status)" (change)="selectRecord($event, project.id)"/></td>
+      <td class="text-right"><a [routerLink]="['/project', project.id]" class="text-normal">{{ project.projectNumber }}</a></td>
+      <td>{{ project.name }}</td>
+      <td>{{ project.status }}</td>
+      <td>{{ project.customer }}</td>
+      <td class="text-center">{{ project.startDate }}</td>
+      <td class="text-center">
+        <a *ngIf="canDelete(project.status)" (click)="deleteOne(project.id)"><i class="fas fa-trash-alt text-danger"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="deleteIds.length > 0 && isNotDelete" class="alert-info border d-flex align-items-center  justify-content-between px-3 py-2">
+  <p class="m-0"><strong class="text-primary">{{deleteIds.length}} item selected</strong></p>
+  <p class="text-danger my-0 mr-3">delete selected items <a (click)="deleteMany()"><i class="fas fa-trash-alt text-danger"></i></a></p>
+</div>
+<div *ngIf="projectList.length == 0" class="alert alert-secondary">No matching records found...</div>
