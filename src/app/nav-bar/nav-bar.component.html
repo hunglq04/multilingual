@@ -1,15 +1,27 @@
-<ng-container>
-  <p class="my-4 text-highlight text-18">{{ "nav.title" | translate }}</p>
+<div class="mt-4">
   <p>
-    <a href="#" class="text-highlight text-18">{{ "nav.new" | translate }}</a>
+    <a
+      routerLink="projects"
+      routerLinkActive="text-black"
+      class="text-highlight text-18"
+      >{{ "nav.title" | translate }}</a
+    >
+  </p>
+  <p class="text-highlight text-18">
+    {{ "nav.new" | translate }}
   </p>
   <p>
-    <a href="#" class="text-black text-14">{{ "nav.project" | translate }}</a>
+    <a
+      routerLink="project/new"
+      class="text-normal text-14"
+      routerLinkActive="text-black"
+      >{{ "nav.project" | translate }}</a
+    >
   </p>
   <p>
-    <a class="text-14">{{ "nav.customer" | translate }}</a>
+    <a href="#" class="text-14 text-normal">{{ "nav.customer" | translate }}</a>
   </p>
   <p>
-    <a class="text-14">{{ "nav.supplier" | translate }}</a>
+    <a href="#" class="text-14 text-normal">{{ "nav.supplier" | translate }}</a>
   </p>
-</ng-container>
+</div>
