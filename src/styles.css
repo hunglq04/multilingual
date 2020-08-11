@@ -1,7 +1,8 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Segoe UI";
   color: #666666;
+  font-size: 12pt;
 }
 
 body {
@@ -58,7 +59,6 @@ body {
 }
 
 .form-group label {
-  font-size: 14pt;
   font-weight: 600;
 }
 
@@ -72,47 +72,45 @@ a {
 }
 
 .btn {
-    width: 200px;
-    height: 35px;
+  width: 200px;
+  height: 35px;
 }
 
 .btn-main {
-    background-color: #2f85fa;
-    text-align: center;
-    color: #ffffff;
+  background-color: #2f85fa;
+  text-align: center;
+  color: #ffffff;
 }
 
 .btn-second {
-    background-color: #b9b9b9;
-    color: #333333;
+  background-color: #b9b9b9;
+  color: #333333;
 }
 
 .btn-transparent {
-    background-color: transparent;
-    color: #2f85fa;
-    font-weight: 600;
+  background-color: transparent;
+  color: #2f85fa;
+  font-weight: 600;
 }
 
 input[type="checkbox"] {
-    width: 15px;
-    height: 15px;;
+  width: 15px;
+  height: 15px;
 }
 
 .table-bordered {
-    background-color: #ffffff;
-    font-size: 14pt;
-    color: #666666;
-    font-weight: 600;
+  background-color: #ffffff;
+  color: #666666;
+  font-weight: 600;
 }
 
 .table-bordered td {
-    border-top: none;
-    border-bottom: none;
+  border-top: none;
+  border-bottom: none;
 }
 
 .table-bordered th {
-    padding: 0px 12px;
-    font-weight: 600;
-    font-size: 14t;
-    height: 35px;
+  padding: 0px 12px;
+  font-weight: 600;
+  height: 35px;
 }
