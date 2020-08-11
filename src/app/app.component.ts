@@ -15,27 +15,19 @@ export class AppComponent implements OnInit{
     translate.addLangs(['en', 'fr']);
     translate.setDefaultLang('en');
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|vi/) ? browserLang : 'en');
+    translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
   }
 
   ngOnInit(): void {
-    // this.getProducts();
-  }
-
-  getProducts() {
-    this.appService.getProducts()
-    .then(res => this.products = res)
-    .catch(err => console.error(err))
   }
 
   setTextColor(lang) {
-    let currLang = localStorage.getItem('lang') || 'vi';
+    let currLang = localStorage.getItem('lang') || 'fr';
     return (lang==currLang) ? 'text-primary' : 'text-secondary';
   }
 
   switchLang(lang) {
     localStorage.setItem('lang', lang);
     this.translate.use(lang);
-    // this.getProducts();
   }
 }
