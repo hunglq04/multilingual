@@ -17,10 +17,10 @@ export class ProjectListComponent implements OnInit {
   constructor(private fb: FormBuilder, private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    let cacheData = JSON.parse(localStorage.getItem('search'));
+    let cacheData = JSON.parse(localStorage.getItem('search')) || {};
     this.formSearch = this.fb.group({
-      keywordSearch: cacheData['keywordSearch'] || '',
-      status: cacheData['status'] || ''
+      keywordSearch: cacheData.keywordSearch || '',
+      status: cacheData.status || ''
     });
     this.fetchData();
   }
