@@ -10,7 +10,8 @@
     <label class="col-3 required">{{
       "projectDetail.number" | translate
     }}</label>
-    <input type="number" [readonly]="!isNew" class="form-control col-3" formControlName="projectNumber" maxlength="4" />
+    <input type="number" [readonly]="!isNew" class="form-control col-3" formControlName="projectNumber" maxlength="4" [ngClass]="{'error': errorCode.includes('ERR01')}"/>
+    <small class="text-danger col-9 offset-3 p-0" *ngIf="errorCode.includes('ERR01')">{{"error.ERR01" | translate}}</small>
   </div>
   <div class="form-group row">
     <label class="col-3 required">{{ "projectDetail.name" | translate }}</label>
@@ -34,7 +35,10 @@
   </div>
   <div class="form-group row">
     <label class="col-3">{{ "projectDetail.member" | translate }}</label>
-    <input type="text" class="form-control col-9" formControlName="members"/>
+    <div class="col-9 p-0">
+      <input type="text" class="form-control" formControlName="members" [ngClass]="{'error': errorCode.includes('ERR02')}"/>
+      <small *ngIf="errorCode.includes('ERR02')" class="text-danger">{{"error.ERR02" | translate}} {{errorCode.split('ERR02')[1]}}</small>
+    </div>
   </div>
   <div class="form-group row">
     <label class="col-3 required">{{
@@ -49,17 +53,25 @@
   </div>
   <div class="form-group row">
     <label class="col-3 required">{{ "common.startDate" | translate }}</label>
-    <input type="date" class="form-control col-3" formControlName="startDate"/>
+    <input type="date" class="form-control col-3" formControlName="startDate" [ngClass]="{'error': errorCode.includes('ERR03')}"/>
     <label class="col-2 offset-1">{{ "common.endDate" | translate }}</label>
-    <input type="date" class="form-control col-3" formControlName="endDate"/>
+    <input type="date" class="form-control col-3" formControlName="endDate" [ngClass]="{'error': errorCode.includes('ERR03')}"/>
+    <small *ngIf="errorCode.includes('ERR03')" class="text-danger col-9 offset-3 p-0">{{ "error.ERR03" | translate }}</small>
   </div>
   <input type="hidden" formControlName="id">
+  <input type="hidden" formControlName="version">
 </form>
 <div class="mt-4 text-right">
   <a routerLink="/projects" type="button" class="btn btn-second mr-5">
     {{ "projectDetail.cancel" | translate }}
   </a>
-  <button type="button" class="btn btn-main"  (click)="onSubmit()">
-    {{ "projectDetail.create" | translate }}
+  <button *ngIf="isNew" type="button" class="btn btn-main"  (click)="onSubmit()">
+      {{ "projectDetail.create" | translate }}
+    <span *ngIf="!isNew">
+      {{ "projectDetail.save" | translate }}
+    </span>
+  </button>
+  <button *ngIf="!isNew" type="button" class="btn btn-main"  (click)="onSubmit()">
+      {{ "projectDetail.save" | translate }}
   </button>
 </div>

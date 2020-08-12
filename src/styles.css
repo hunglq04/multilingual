@@ -111,11 +111,11 @@ input[type="checkbox"] {
 }
 
 .table-bordered th {
-  padding: 0px 12px;
+  padding: 0px 5px;
   font-weight: 600;
   height: 35px;
 }
 
-.submitted input.ng-invalid, .submitted select.ng-invalid {
+.submitted input.ng-invalid, .submitted select.ng-invalid, .error{
   border: 1px solid #dc3545
 }

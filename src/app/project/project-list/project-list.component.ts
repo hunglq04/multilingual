@@ -52,17 +52,30 @@ export class ProjectListComponent implements OnInit {
   }
 
   deleteOne(projectId) {
+    if(!this.confirmDelete()) {
+      return;
+    }
     this.isNotDelete = false;
     this.deleteIds = [projectId];
     this.delete();
   }
 
   deleteMany() {
+    if(!this.confirmDelete()) {
+      return;
+    }
     this.delete();
   }
 
   canDelete(status) {
     return status == 'NEW';
+  }
+
+  confirmDelete() {
+    if(confirm("Do you wanna delete?")) {
+      return true;
+    };
+    return false;
   }
   // Event handler end
 

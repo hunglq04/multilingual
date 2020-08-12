@@ -32,10 +32,11 @@
         "name": "FR_Project name",
         "customer": "FR_Customer",
         "group": "FR_Group",
-        "member": "FR_Member",
+        "member": "FR_Members",
         "status": "FR_Status",
         "cancel": "FR_Cancel",
-        "create": "FR_Create Project"
+        "create": "FR_Create Project",
+        "save": "FR_Save Project"
     },
 
     "projectList": {
@@ -43,6 +44,21 @@
         "searchPH": "FR_Project number, name, customer name",
         "filterPH": "FR_Project status",
         "search": "FR_Search Project",
-        "reset": "FR_Reset Search"
+        "reset": "FR_Reset Search",
+        "countDelete": "FR_items selected",
+        "deleteInform": "FR_delete selected items",
+        "empty": "FR_No matching records found..."
+    },
+
+    "error": {
+        "form": "FR_Please enter all mandatory fields (*)",
+        "projectNumber": "FR_The project number already existed. Please select a different number",
+        "members": "FR_The following visas do not exist: ",
+        "unexpected1": "FR_Unexpected error occurred.",
+        "unexpected2": "FR_Please contact your administrator",
+        "back": "FR_back to search project",
+        "ERR01": "FR_The project number already existed. Please select a different project number",
+        "ERR02": "FR_The following visas do not exist: ",
+        "ERR03": "FR_End date should greater than Start date"
     }
 }

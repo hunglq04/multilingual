@@ -11,10 +11,11 @@ import { ProjectService } from '../project.service';
 export class ProjectDetailComponent implements OnInit {
 
   formProject: FormGroup;
-  projectId: Number;
+  projectId = '';
   groups = [];
   isSubmit = false;
   isNew = true;
+  errorCode = '';
 
   constructor(
     private fb: FormBuilder, 
@@ -34,11 +35,14 @@ export class ProjectDetailComponent implements OnInit {
       status: 'NEW',
       startDate: ['', Validators.required],
       endDate: [''],
+      version: ['']
     });
     this.getGroupData();
-    this.projectId = this.route.snapshot.params['id'];
-    this.isNew = Number.isNaN(+this.projectId);
-    this.getProjectDetail();
+    this.route.paramMap.subscribe(params => {
+      this.projectId = params.get('id');
+      this.isNew = Number.isNaN(+this.projectId);
+      this.getProjectDetail();
+    })
   }
 
   onSubmit() {
@@ -46,8 +50,14 @@ export class ProjectDetailComponent implements OnInit {
     if(this.formProject.valid) {
       this.projectService.saveOrUpdateProject(this.formProject.value)
         .subscribe(res => {
-          console.log("SAVE SUCCESS", res);
-          this.router.navigateByUrl('/projects');
+          let message = res['message'];
+          if(message == "Success") {
+            console.log("SAVE SUCCESS", res);
+            this.router.navigateByUrl('/projects');
+          } else {
+            this.errorCode = message;
+            console.log(this.errorCode);
+          }
         }, err => {
           console.log("SAVE ERROR", err);
           this.isSubmit = false;
@@ -73,7 +83,28 @@ export class ProjectDetailComponent implements OnInit {
       }, err => {
         console.log("PROJECT DETAIL ERROR", err);
       })
+    } else {
+      this.reset();
     }
+  }
+
+  reset() {
+    this.projectId = '';
+    this.isNew = true;
+    this.errorCode = ''
+    this.isSubmit = false;
+    this.formProject.setValue({
+      id:'',
+      projectNumber: '',
+      projectName: '',
+      customer: '',
+      groupId: '',
+      members: '',
+      status: 'NEW',
+      startDate: '',
+      endDate: '',
+      version: '',
+    });
   }
 
 }

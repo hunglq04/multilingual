@@ -32,10 +32,11 @@
         "name": "Project name",
         "customer": "Customer",
         "group": "Group",
-        "member": "Member",
+        "member": "Members",
         "status": "Status",
         "cancel": "Cancel",
-        "create": "Create Project"
+        "create": "Create Project",
+        "save": "Save project"
     },
 
     "projectList": {
@@ -43,6 +44,21 @@
         "searchPH": "Project number, name, customer name",
         "filterPH": "Project status",
         "search": "Search Project",
-        "reset": "Reset Search"
+        "reset": "Reset Search",
+        "countDelete": "items selected",
+        "deleteInform": "delete selected items",
+        "empty": "No matching records found..."
+    },
+
+    "error": {
+        "form": "Please enter all mandatory fields (*)",
+        "projectNumber": "The project number already existed. Please select a different number",
+        "members": "The following visas do not exist: ",
+        "unexpected1": "Unexpected error occurred.",
+        "unexpected2": "Please contact your administrator",
+        "back": "back to search project",
+        "ERR01": "The project number already existed. Please select a different project number",
+        "ERR02": "The following visas do not exist: ",
+        "ERR03": "End date should greater than Start date"
     }
 }
