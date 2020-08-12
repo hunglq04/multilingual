@@ -29,7 +29,7 @@
     }}</label>
     <select class="form-control col-3" formControlName="groupId">
       <ng-container  *ngFor="let groupItem of groups">
-        <option [value]="groupItem.groupId" selected>{{groupItem.groupLeader}}</option>
+        <option [value]="groupItem.groupId">{{groupItem.groupLeader}}</option>
       </ng-container>
     </select>
   </div>

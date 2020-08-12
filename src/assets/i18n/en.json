@@ -55,7 +55,7 @@
         "projectNumber": "The project number already existed. Please select a different number",
         "members": "The following visas do not exist: ",
         "unexpected1": "Unexpected error occurred.",
-        "unexpected2": "Please contact your administrator",
+        "unexpected2": "contact your administrator",
         "back": "back to search project",
         "ERR01": "The project number already existed. Please select a different project number",
         "ERR02": "The following visas do not exist: ",

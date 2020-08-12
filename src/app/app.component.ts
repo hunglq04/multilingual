@@ -1,10 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core'
+import { Component, DoCheck, AfterContentChecked, AfterViewChecked } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck{
+
+  isError = true;
+
+  constructor(private router: Router) {
+  }
+
+  ngDoCheck() {
+    this.isError = this.router.url.includes('/error');
+  }
+
 }

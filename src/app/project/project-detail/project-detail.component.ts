@@ -50,14 +50,8 @@ export class ProjectDetailComponent implements OnInit {
     if(this.formProject.valid) {
       this.projectService.saveOrUpdateProject(this.formProject.value)
         .subscribe(res => {
-          let message = res['message'];
-          if(message == "Success") {
-            console.log("SAVE SUCCESS", res);
-            this.router.navigateByUrl('/projects');
-          } else {
-            this.errorCode = message;
-            console.log(this.errorCode);
-          }
+          this.handleMessageResult(res['message']);
+          this.isSubmit = false;
         }, err => {
           console.log("SAVE ERROR", err);
           this.isSubmit = false;
@@ -78,10 +72,11 @@ export class ProjectDetailComponent implements OnInit {
     if(!this.isNew) {
       this.projectService.getOne(this.projectId)
       .subscribe(res => {
-        console.log("PROJECT DETAIL", res);
-        this.formProject.setValue(res);
-      }, err => {
-        console.log("PROJECT DETAIL ERROR", err);
+        if(res['message']) {
+          this.handleMessageResult(res['message']);
+        } else {
+          this.formProject.setValue(res);
+        }
       })
     } else {
       this.reset();
@@ -105,6 +100,23 @@ export class ProjectDetailComponent implements OnInit {
       endDate: '',
       version: '',
     });
+  }
+
+  handleMessageResult(message) {
+    switch(message) {
+      case 'Success':
+        this.router.navigateByUrl('/projects');
+        break;
+      case 'ERR00':
+        this.router.navigateByUrl('/error');
+        break;
+      case 'ERR04':
+        alert("Project Info has been modified.");
+        this.getProjectDetail();
+        break;
+      default:
+        this.errorCode = message;
+    }
   }
 
 }
