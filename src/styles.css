@@ -115,3 +115,7 @@ input[type="checkbox"] {
   font-weight: 600;
   height: 35px;
 }
+
+.submitted input.ng-invalid, .submitted select.ng-invalid {
+  border: 1px solid #dc3545
+}

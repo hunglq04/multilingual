@@ -5,7 +5,8 @@
         "endDate":"FR_End date",
         "number": "FR_Number",
         "name": "FR_Name",
-        "customer": "FR_Customer"
+        "customer": "FR_Customer",
+        "delete": "FR_Delete"
     },
 
     "header": {

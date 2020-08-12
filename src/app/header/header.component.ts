@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css', '../app.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'fr']);
+    translate.use(localStorage.getItem('lang') || 'en');
+  }
 
-  ngOnInit(): void {
+  setTextColor(lang) {
+    return (lang==this.translate.currentLang) ? 'text-highlight' : 'text-normal';
+  }
+
+  switchLang(lang) {
+    localStorage.setItem('lang', lang);
+    this.translate.use(lang);
   }
 
 }
