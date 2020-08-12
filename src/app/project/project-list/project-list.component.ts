@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProjectService } from '../project.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-project-list',
@@ -18,9 +17,10 @@ export class ProjectListComponent implements OnInit {
   constructor(private fb: FormBuilder, private projectService: ProjectService) { }
 
   ngOnInit(): void {
+    let cacheData = JSON.parse(localStorage.getItem('search'));
     this.formSearch = this.fb.group({
-      keywordSearch: '',
-      status: ''
+      keywordSearch: cacheData['keywordSearch'] || '',
+      status: cacheData['status'] || ''
     });
     this.fetchData();
   }
@@ -28,6 +28,7 @@ export class ProjectListComponent implements OnInit {
   // Event handler start
   search() {
     this.deleteIds = [];
+    localStorage.setItem('search', JSON.stringify(this.formSearch.value));
     this.fetchData();
   }
 
@@ -38,6 +39,7 @@ export class ProjectListComponent implements OnInit {
     });
     this.deleteIds = [];
     this.isNotDelete = true;
+    localStorage.removeItem('search');
     this.fetchData();
   }
 
