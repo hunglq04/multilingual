@@ -38,20 +38,48 @@
   </thead>
   <tbody>
     <tr *ngFor="let project of projectList">
-      <td class="text-center"><input type="checkbox" [disabled]="!canDelete(project.status)" (change)="selectRecord($event, project.id)"/></td>
-      <td class="text-right"><a [routerLink]="['/project', project.id]" class="text-normal">{{ project.projectNumber }}</a></td>
+      <td class="text-center">
+        <input
+          type="checkbox"
+          [disabled]="!canDelete(project.status)"
+          (change)="selectRecord($event, project.id)"
+        />
+      </td>
+      <td class="text-right">
+        <a [routerLink]="['/project', project.id]" class="text-normal">{{
+          project.projectNumber
+        }}</a>
+      </td>
       <td>{{ project.name }}</td>
       <td>{{ project.status | status }}</td>
       <td>{{ project.customer }}</td>
       <td class="text-center">{{ project.startDate | dotDate }}</td>
       <td class="text-center">
-        <a *ngIf="canDelete(project.status)" (click)="deleteOne(project.id)"><i class="fas fa-trash-alt text-danger"></i></a>
+        <a *ngIf="canDelete(project.status)" (click)="deleteOne(project.id)"
+          ><i class="fas fa-trash-alt text-danger"></i
+        ></a>
       </td>
     </tr>
   </tbody>
 </table>
-<div *ngIf="deleteIds.length > 0 && isNotDelete" class="alert-info border d-flex align-items-center  justify-content-between px-3 py-2">
-  <p class="m-0"><strong class="text-primary">{{deleteIds.length}} {{"projectList.countDelete" | translate}}</strong></p>
-  <p class="text-danger my-0 mr-2">{{"projectList.deleteInform" | translate}} <a (click)="deleteMany()"><i class="fas fa-trash-alt text-danger"></i></a></p>
+<div
+  *ngIf="deleteIds.length > 0 && isNotDelete"
+  class="alert-info border d-flex align-items-center justify-content-between px-3 py-2"
+>
+  <p class="m-0">
+    <strong class="text-primary"
+      >{{ deleteIds.length }}
+      {{ "projectList.countDelete" | translate }}</strong
+    >
+  </p>
+  <p class="text-danger my-0 mr-2">
+    {{ "projectList.deleteInform" | translate }}
+    <a (click)="deleteMany()"><i class="fas fa-trash-alt text-danger"></i></a>
+  </p>
 </div>
-<div *ngIf="projectList.length == 0" class="alert alert-secondary">{{"projectList.empty" | translate}}</div>
+<div *ngIf="projectList.length == 0" class="alert alert-secondary">
+  {{ "projectList.empty" | translate }}
+</div>
+<div class="mt-4 d-flex justify-content-end">
+  <app-paging [first]="false" [last]="true" [totalPages]="5" [currentPage]="1"></app-paging>
+</div>

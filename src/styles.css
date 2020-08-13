@@ -119,3 +119,8 @@ input[type="checkbox"] {
 .submitted input.ng-invalid, .submitted select.ng-invalid, .error{
   border: 1px solid #dc3545
 }
+
+.selected {
+  background-color: #f5f5f5;
+  color: #666666;
+}

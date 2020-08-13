@@ -1,0 +1,32 @@
+<ul class="pagination">
+  <li class="page-item">
+    <a
+      class="page-link"
+      aria-label="Previous"
+      *ngIf="!first"
+      (click)="changePage(true, false, 0)"
+    >
+      <span aria-hidden="true">&laquo;</span>
+      <span class="sr-only">Previous</span>
+    </a>
+  </li>
+  <li *ngFor="let page of pages" class="page-item">
+    <a
+      class="page-link"
+      [ngClass]="isSelectedPage(page)"
+      (click)="changePage(false, false, page)"
+      >{{ page }}</a
+    >
+  </li>
+  <li class="page-item">
+    <a
+      class="page-link"
+      aria-label="Next"
+      *ngIf="!last"
+      (click)="changePage(false, true, 0)"
+    >
+      <span aria-hidden="true">&raquo;</span>
+      <span class="sr-only">Next</span>
+    </a>
+  </li>
+</ul>

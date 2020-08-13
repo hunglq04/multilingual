@@ -15,6 +15,7 @@ import { ProjectDetailComponent } from './project/project-detail/project-detail.
 import { StatusPipe } from './pipe/status.pipe';
 import { DotDatePipe } from './pipe/dot-date.pipe';
 import { InternalErrorComponent } from './internal-error/internal-error.component';
+import { PagingComponent } from './paging/paging.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectDetailComponent,
     StatusPipe,
     DotDatePipe,
-    InternalErrorComponent
+    InternalErrorComponent,
+    PagingComponent
   ],
   imports: [
     BrowserModule,
